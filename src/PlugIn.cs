@@ -1,4 +1,3 @@
-//  Copyright 2005-2010 Portland State University, University of Wisconsin
 //  Authors:  Robert M. Scheller, James B. Domingo
 
 using Landis.Library.AgeOnlyCohorts;
@@ -7,6 +6,7 @@ using Landis.Library.InitialCommunities;
 using Landis.Library.Succession;
 using System.Collections.Generic;
 using Landis.SpatialModeling;
+using System;
 
 namespace Landis.Extension.Succession.AgeOnly
 {
@@ -20,6 +20,7 @@ namespace Landis.Extension.Succession.AgeOnly
         public static Species.AuxParm<Ecoregions.AuxParm<double>> establishProbabilities;
         
         private static ICore modelCore;
+        private ICommunity initialCommunity;
 
 
         //---------------------------------------------------------------------
@@ -95,8 +96,7 @@ namespace Landis.Extension.Succession.AgeOnly
 
         //---------------------------------------------------------------------
 
-        protected override void InitializeSite(ActiveSite site,
-                                               ICommunity initialCommunity)
+        protected override void InitializeSite(ActiveSite site)//,ICommunity initialCommunity)
         {
             SiteVars.Cohorts[site] = new SiteCohorts(initialCommunity.Cohorts);
 
@@ -173,6 +173,37 @@ namespace Landis.Extension.Succession.AgeOnly
             double establishProbability = SpeciesData.EstablishProbability[species][ecoregion];
 
             return establishProbability > 0.0;
+        }
+
+        public override void InitializeSites(string initialCommunitiesText, string initialCommunitiesMap, ICore modelCore)
+        {
+            ModelCore.UI.WriteLine("   Loading initial communities from file \"{0}\" ...", initialCommunitiesText);
+            Landis.Library.InitialCommunities.DatasetParser parser = new Landis.Library.InitialCommunities.DatasetParser(Timestep, ModelCore.Species);
+            Landis.Library.InitialCommunities.IDataset communities = Landis.Data.Load<Landis.Library.InitialCommunities.IDataset>(initialCommunitiesText, parser);
+
+            ModelCore.UI.WriteLine("   Reading initial communities map \"{0}\" ...", initialCommunitiesMap);
+            IInputRaster<uintPixel> map;
+            map = ModelCore.OpenRaster<uintPixel>(initialCommunitiesMap);
+            using (map)
+            {
+                uintPixel pixel = map.BufferPixel;
+                foreach (Site site in ModelCore.Landscape.AllSites)
+                {
+                    map.ReadBufferPixel();
+                    uint mapCode = pixel.MapCode.Value;
+                    if (!site.IsActive)
+                        continue;
+
+                    ActiveSite activeSite = (ActiveSite)site;
+                    initialCommunity = communities.Find(mapCode);
+                    if (initialCommunity == null)
+                    {
+                        throw new ApplicationException(string.Format("Unknown map code for initial community: {0}", mapCode));
+                    }
+
+                    InitializeSite(activeSite); //, community);
+                }
+            }
         }
     }
 }
