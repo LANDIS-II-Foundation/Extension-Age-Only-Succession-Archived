@@ -5,7 +5,7 @@
     <RootNamespace>Landis.Extension.Succession.AgeOnly</RootNamespace>
     <AssemblyName>Landis.Extension.Succession.AgeOnly-v5</AssemblyName>
     <AssemblyTitle>Landis.Extension.Succession.AgeOnly-v5</AssemblyTitle>
-    <AssemblyVersion>5.1.0.0</AssemblyVersion>
+    <AssemblyVersion>5.2.0.0</AssemblyVersion>
     <Description>Age Only Succession</Description>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/blob/master/LICENSE</PackageLicenseUrl>
@@ -16,8 +16,8 @@
     <Product>Age-Only Succession</Product>
     <PackageTags>LANDIS-II;Landis;Extension;Age only succession</PackageTags>
     <NeutralLanguage>English</NeutralLanguage>
-    <Version>5.1.0</Version>
-    <FileVersion>7.0.0.0</FileVersion>
+    <Version>5.2.0</Version>
+    <FileVersion>5.2.0.0</FileVersion>
     <PackageProjectUrl>http://www.landis-ii.org</PackageProjectUrl>
     <PackageReleaseNotes>.NET Standard 2.0 update</PackageReleaseNotes>
   </PropertyGroup>
@@ -36,8 +36,7 @@
     <Reference Include="Landis.Library.InitialCommunity-v1">
       <HintPath>lib\Landis.Library.InitialCommunity-v1.dll</HintPath>
     </Reference>
-    <Reference Include="Landis.Library.Succession-v7">
-      <HintPath>lib\Landis.Library.Succession-v7.dll</HintPath>
+    <Reference Include="Landis.Library.Succession-v8">
     </Reference>
   </ItemGroup>
 

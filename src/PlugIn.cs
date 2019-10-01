@@ -96,7 +96,7 @@ namespace Landis.Extension.Succession.AgeOnly
 
         //---------------------------------------------------------------------
 
-        protected override void InitializeSite(ActiveSite site)//,ICommunity initialCommunity)
+        protected override void InitializeSite(ActiveSite site)
         {
             SiteVars.Cohorts[site] = new SiteCohorts(initialCommunity.Cohorts);
 
@@ -131,7 +131,7 @@ namespace Landis.Extension.Succession.AgeOnly
         /// This is a Delegate method to base succession.
         /// </summary>
 
-        public void AddNewCohort(ISpecies species, ActiveSite site)
+        public void AddNewCohort(ISpecies species, ActiveSite site, string reproductionType)
         {
             SiteVars.Cohorts[site].AddNewCohort(species);
         }
