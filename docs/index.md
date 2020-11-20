@@ -1,55 +1,57 @@
-# What is NECN?
+# What is Age-Only Succession?
 
-The Net Ecosystem Carbon & Nitrogen (NECN) Succession extension implements succession with full accounting of above and below ground carbon and nitrogen. Aboveground biomass generally follows the behavior of previous Biomass Succession extensions with cohorts that have biomass (g m-2). In addition, below ground processing of Carbon and Nitrogen is simulated following the logic of the Century nutrient cycling model (v4.0). 
+Age-Only succession behaves similar to previous LANDIS models. However, this extension has a variable temporal resolution and therefore cohort ages are not limited to 10-year time steps.  Age-only Succession v2.0 - Previous versions of LANDIS applied an assumption that species cohorts younger than their age of sexual maturity did not cast shade. This assumption was implemented as a proxy for crown closure, assuming that opportunities for species establishment existed prior to the onset of direct competition for light. Version 2.0 now includes this assumption to be most compatible with earlier versions of LANDIS.
+
+Age-Only succession defines a species-age cohort  as a function of cohort reproduction, cohort ageing, and cohort mortality. The onset of cohort reproduction requires three prior events:  
+1.  a propagule must exist, either through seeding, resprouting, or planting; 
+2. there must be adequate light; and  
+3. the probability of species establishment must exceed a random number. Disturbance, seed dispersal, and amount of shade all affect cohort reproduction. Extension-Age-Only-Succession uses the seed dispersal algorithm described in the white paper provided on the LANDIS-II web site (www.landis-ii.org/documentation) by Ward et al. (2005).
 
 # Features
 
-- [x] Estimate Net Ecosystem Exchange.
-- [x] Estimate Actual and Potential Evapotranspiration, Climatic Water Deficit, and Available Soil Water.
-- [x] Estimate smoke emissions from wildfires and prescribed fires.
-- [x] Species parameters input as CSV delimited files.
-- [x] Estimate Soil Organic Carbon, Soil Nitrogen, Nitrogen fluxes
+- [x] Does not require biomass inputs for the initial community.
+- [x] Is the most widely compatible extension as it as has the simplist cohort structure: only species and age.
 
 # Release Notes
 
-- Latest official release: Version 6.4.1 — May 2020
-- This extension was formerly named Century Succession.
-- [NECN User Guide](https://github.com/LANDIS-II-Foundation/Extension-NECN-Succession/blob/master/docs/LANDIS-II%20Net%20Ecosystem%20CN%20Succession%20v6.4%20User%20Guide.pdf).
-- [User Guide for Climate Library](https://github.com/LANDIS-II-Foundation/Library-Climate/blob/master/docs/LANDIS-II%20Climate%20Library%20v4.1%20User%20Guide.pdf)
-- Full release details found in the NECN User Guide and on GitHub.
+- Latest official release: Version 5.2 â€” October 2019
+- [Age-Only Succession User Guide](https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/blob/master/docs/LANDIS-II%20Age-Only%20Succession%20v5.0%20User%20Guide.pdf).
+- Full release details found in the User Guide and on GitHub.
 
 # Requirements
 
-To use NECN, you need:
+To use Age-Only Succession, you need:
 
 - The [LANDIS-II model v7.0](http://www.landis-ii.org/install) installed on your computer.
 - Example files (see below)
 
 # Download
 
-Version 6.4.1 can be downloaded [here](https://github.com/LANDIS-II-Foundation/Extension-NECN-Succession/blob/master/deploy/past-releases/LANDIS-II-V7%20NECN%20Succession%206.4.1-setup.exe). To install it on your computer, just launch the installer.
+Version 5.2 can be downloaded [here](https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/blob/master/deploy/installer/LANDIS-II-V7%20Age%20Only%20Succession%205.2-setup.exe). To install it on your computer, just launch the installer.  To run the extension, use the batch file provided with the example.
 
 # Citation
 
-How to cite: Scheller, R.M., D. Hua, P.V. Bolstad, R. Birdsey, D.J. Mladenoff. 2011. The effects of forest harvest intensity in combination with wind disturbance on carbon dynamics in a Lake States mesic landscape. Ecological Modelling 222: 144-153.
+Mladenoff, D.J. and H.S. He. 1999. Design, behavior and applications of LANDIS, an object-oriented models of forest landscape disturbance and succession. Pages 125-162 in Spatial modeling of forest landscape change, Mladenoff, D.J. and Baker, W.L. (eds.), Cambridge University Press, Cambridge, UK.
+
+# Compatible Extensions
+
+Base Fire, Base Harvest, Base Wind, Base BDA, Base Drought, Dynamic Fuels and Fire
 
 # Example Files
 
-LANDIS-II requires a global parameter file for your scenario, and then different parameter files for each extension.
+LANDIS-II requires a global parameter file for your scenario, and separate parameter files for each extension.
 
-Example files are [here](https://github.com/LANDIS-II-Foundation/Extension-NECN-Succession/tree/master/testing/Core7-NECN6.4/ExampleNECNv64.zip).
+Example files are [here](https://github.com/LANDIS-II-Foundation/UPDATE.zip).
 
 # Support
 
 If you have a question, please contact Robert Scheller at rschell@ncsu. 
 You can also ask for help in the [LANDIS-II users group](http://www.landis-ii.org/users).
 
-If you come across any issue or suspected bug when using NECN, please post about it in the [issue section of the Github repository](https://github.com/LANDIS-II-Foundation/Extension-NECN-Succession/issues).
+If you come across any issue or suspected bug when using NECN, please post about it in the [issue section of the Github repository](https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/issues).
 
 # Author
 
 [The LANDIS-II Foundation](http://www.landis-ii.org)
-
-Professor at the North Carolina State University
 
 Mail : rschell@ncsu.edu
