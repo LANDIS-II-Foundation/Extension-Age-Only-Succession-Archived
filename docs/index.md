@@ -41,14 +41,14 @@ Base Fire, Base Harvest, Base Wind, Base BDA, Base Drought, Dynamic Fuels and Fi
 
 LANDIS-II requires a global parameter file for your scenario, and separate parameter files for each extension.
 
-Example files are [here](https://github.com/LANDIS-II-Foundation/UPDATE.zip).
+Example files are [here](https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/blob/master/testing/Corev7/Age-only-example.zip).
 
 # Support
 
-If you have a question, please contact Robert Scheller at rschell@ncsu. 
+If you have a question, please contact Robert Scheller. 
 You can also ask for help in the [LANDIS-II users group](http://www.landis-ii.org/users).
 
-If you come across any issue or suspected bug when using NECN, please post about it in the [issue section of the Github repository](https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/issues).
+If you come across any issue or suspected bug when using NECN, please post about it in the [issue section of the Github repository](https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession/issues) (GitHub ID required).
 
 # Author
 
