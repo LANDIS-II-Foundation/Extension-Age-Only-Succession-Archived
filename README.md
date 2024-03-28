@@ -1,19 +1,11 @@
 # Extension-Age-Only-Succession
+This extension has been archived.  With the introduction of the Universal Cohort Library, age-only succession is not  compatible with LANDIS-II v8 and is therefore being depricated.
 
 Changes to this extension are governed by the [**Repository Rules**](https://sites.google.com/site/landismodel/developers) from the Technical Advisory Committee.
-
 Robert Scheller is the Custodian of this repository.
 
  <br><br>
 # About
-
-**Project:** LANDIS-II Landscape Change Model <br>
-**Project Component:** Extension-Age-Only-Succession <br>
-**Component Deposition:**	<https://github.com/LANDIS-II-Foundation/Extension-Age-Only-Succession> <br>
-**Author:**			LANDIS-II Foundation <br>
-**Origin Date:** 28 June 2018 <br>
-**Final Date:**	28 June 2018 <br>
-
 
 Welcome to the source code repository for Extension-Age-Only-Succession, a LANDIS-II succession extension.
 
@@ -47,7 +39,6 @@ source code files that the C# compiler will combine to produce a single output (
 A Visual Studio project file is designated with a .csproj extension. A 'solution' is a set of 
 one or more .csproj files.  A Visual Studio solution file is designated with a .sln extension.
 
-
 The process of building 'the science' into 'the model' is done via a LANDIS-II extension.
 The process looks like this:
 
@@ -69,11 +60,9 @@ The process looks like this:
 
 # Step-by-step instructions for building a new or modified extension from source code
 
-
 The following steps use both a Git command-line interface (GitBASH for Windows; see above) and the menu-driven options available in Visual Studio (VS). 
 
 The example given below is a specific one and uses the extension,"Extension-Base-Harvest". The repo for this extension is available at  https://github.com/LANDIS-II-Foundation/Extension-Base-Harvest.
-
 
 Substitute, as appropriate, for your extension of interest.
 
