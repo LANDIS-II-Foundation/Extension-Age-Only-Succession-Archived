@@ -1,4 +1,4 @@
-# Extension-Age-Only-Succession
+# Extension-Age-Only-Succession (Archived)
 This extension has been archived.  With the introduction of the Universal Cohort Library, age-only succession is not  compatible with LANDIS-II v8 and is therefore being depricated.
 
 Changes to this extension are governed by the [**Repository Rules**](https://sites.google.com/site/landismodel/developers) from the Technical Advisory Committee.
